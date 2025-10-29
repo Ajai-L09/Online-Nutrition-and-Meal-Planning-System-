@@ -1,6 +1,7 @@
 package com.online_nutrition_and_meal_planning_system.model;
 
 import jakarta.persistence.*;
+import jakarta.persistence.Column;
 import lombok.Data;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId")
     private Long userId;
     private String username;
     private String passwordHash;

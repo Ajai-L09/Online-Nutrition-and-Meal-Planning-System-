@@ -1,6 +1,7 @@
 package com.online_nutrition_and_meal_planning_system.model;
 
 import jakarta.persistence.*;
+import jakarta.persistence.JoinColumn;
 import lombok.Data;
 
 import java.util.Date;
@@ -16,7 +17,9 @@ public class Log {
     private String status;
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User user;
     @ManyToOne
+    @JoinColumn(name = "foodId")
     private FoodItem foodItem;
 }

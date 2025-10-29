@@ -2,6 +2,7 @@ package com.online_nutrition_and_meal_planning_system.model;
 
 
 import jakarta.persistence.*;
+import jakarta.persistence.Column;
 import lombok.Data;
 
 import java.util.List;
@@ -12,7 +13,9 @@ import java.util.List;
 public class FoodItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "foodId")
     private Long foodItemId;
+
     private String name;
     private int calories;
     private int protein;
