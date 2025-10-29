@@ -22,7 +22,7 @@ public class ProgressAnalyticsService {
 
     public Map<String, Integer> getNutritionReport(Long userId, Date startDate, Date endDate){
         User user = userRepo.findById(userId).orElseThrow(()->new RuntimeException("User not found"));
-        List<Log> logs = logRepo.findByUserAndStatusAndDate(user, "Eaten", startDate,endDate);
+        List<Log> logs = logRepo.findByUserAndStatusAndDateBetween(user, "Eaten", startDate,endDate);
         int totCalories = 0;
         int totProtein = 0;
         int totCarbs = 0;

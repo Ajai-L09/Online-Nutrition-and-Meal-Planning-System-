@@ -29,7 +29,7 @@ public class RecommendationService {
         Date startDate = getStartOfToday();
         Date endDate = getEndOfToday();
 
-        List<Log> todayLogs = logRepo.findByUserAndStatusAndDate(user, "Eaten", startDate, endDate);
+        List<Log> todayLogs = logRepo.findByUserAndStatusAndDateBetween(user, "Eaten", startDate, endDate);
         int caloriesEaten = todayLogs.stream().mapToInt(log -> log.getFoodItem().getCalories()).sum();
         int remainingCalories = user.getDailyCalorieGoal() - caloriesEaten;
 
