@@ -29,10 +29,10 @@ public class ProgressAnalyticsService {
         int totFat = 0;
         for (Log log : logs){
             FoodItem item = log.getFoodItem();
-            totCalories += log.getCalories();
-            totProtein += log.getProtein();
-            totCarbs += log.getCarbs();
-            totFat += log.getFat();
+            totCalories += item.getCalories();
+            totProtein += item.getProtein();
+            totCarbs += item.getCarbs();
+            totFat += item.getFat();
         }
         Map<String, Integer> report = new HashMap<>();
         report.put("totCalories", totCalories);
